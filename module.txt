@@ -1,0 +1,11 @@
+{
+    "id" : "StructureTemplatesTutorial",
+    "version" : "0.1.0-SNAPSHOT",
+    "author" : "BenjaminAmos",
+    "displayName" : "StructureTemplatesTutorial",
+    "description" : "A tutorial for the StructureTemplates system",
+    "dependencies" : [
+        {"id" : "StructureTemplates", "minVersion" : "0.3.0"}
+    ],
+    "serverSideOnly" : false
+}
