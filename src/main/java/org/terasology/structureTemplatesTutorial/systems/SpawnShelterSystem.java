@@ -23,6 +23,7 @@ import org.terasology.logic.location.LocationComponent;
 import org.terasology.logic.players.event.OnPlayerSpawnedEvent;
 import org.terasology.math.Side;
 import org.terasology.math.geom.Vector3i;
+import org.terasology.math.geom.Vector3f;
 import org.terasology.registry.In;
 import org.terasology.structureTemplates.events.SpawnStructureEvent;
 import org.terasology.structureTemplates.interfaces.StructureTemplateProvider;
@@ -45,6 +46,12 @@ public class SpawnShelterSystem extends BaseComponentSystem {
             return;
         }
 
-        template.send(new SpawnStructureEvent(BlockRegionTransform.createMovingThenRotating(new Vector3i(0, character.getComponent(LocationComponent.class).getWorldPosition().y - HEIGHT_OFFSET, 0), Side.FRONT, Side.FRONT)));
+        Vector3f location = character.getComponent(LocationComponent.class).getWorldPosition();
+        template.send(new SpawnStructureEvent(
+                BlockRegionTransform.createMovingThenRotating(
+                            new Vector3i(0, location.y - HEIGHT_OFFSET, 0),
+                            Side.FRONT, Side.FRONT)
+                )
+        );
     }
 }
