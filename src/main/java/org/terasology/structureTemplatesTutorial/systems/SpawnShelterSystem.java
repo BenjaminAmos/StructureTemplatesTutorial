@@ -19,7 +19,6 @@ import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterSystem;
-import org.terasology.entitySystem.systems.UpdateSubscriberSystem;
 import org.terasology.logic.location.LocationComponent;
 import org.terasology.logic.players.event.OnPlayerSpawnedEvent;
 import org.terasology.math.Side;
@@ -30,21 +29,12 @@ import org.terasology.structureTemplates.interfaces.StructureTemplateProvider;
 import org.terasology.structureTemplates.util.BlockRegionTransform;
 
 @RegisterSystem
-public class SpawnShelterSystem extends BaseComponentSystem implements UpdateSubscriberSystem {
+public class SpawnShelterSystem extends BaseComponentSystem {
     private static final String SHELTER_TEMPLATE_TYPE = "StructureTemplatesTutorial:basicShelter";
     private static final int HEIGHT_OFFSET = 1; //The player is two blocks-tall, so the shelter must be placed at half that height
 
     @In
     private StructureTemplateProvider templateProvider;
-
-    @Override
-    public void initialise() {
-    }
-
-    @Override
-    public void update(float delta) {
-
-    }
 
 
     @ReceiveEvent
